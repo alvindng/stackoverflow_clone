@@ -10,4 +10,11 @@ describe 'the user feature' do
     click_on 'Create User'
     expect(page).to have_content("Kojiro Sasaki")
   end
+
+  it 'should list all the users' do
+    user = User.create(name: "foo", email: "foo", password: "foo", password_confirmation: "foo")
+    visit root_path
+    click_on 'All Users'
+    expect(page).to have_content("foo")
+  end
 end
