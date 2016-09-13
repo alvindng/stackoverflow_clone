@@ -12,9 +12,9 @@ describe 'the user feature' do
   end
 
   it 'should list all the users' do
-    user = User.create(name: "foo", email: "foo", password: "foo", password_confirmation: "foo")
+    user = FactoryGirl.create(:user, name: "Ushinosuke")
     visit root_path
     click_on 'All Users'
-    expect(page).to have_content("foo")
+    expect(page).to have_content("Ushinosuke")
   end
 end

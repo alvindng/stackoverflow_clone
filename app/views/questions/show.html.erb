@@ -1,1 +1,9 @@
 <h1><%= @question.content %></h1>
+
+<% @question.answers.each do |answer| %>
+  <h1><%= link_to answer.content, question_answer_path(@question, answer) %></h1>
+  <h4> by: <%= answer.user.name %></h4>
+<%end%>
+
+
+<%= link_to 'Answer This Question', new_question_answer_path(@question) %>

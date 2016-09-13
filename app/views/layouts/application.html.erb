@@ -11,7 +11,7 @@
   <body>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
-    <h1><%= session[:user_id] %></h1> 
+  
     <%= link_to "Sign Out", '/logout', data: {confirm: "Do your parents know you're signing out?", method: :delete} %>
     <%= yield %>
   </body>

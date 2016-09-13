@@ -1,4 +1,4 @@
 <% @questions.each do |question| %>
-  <h1><%= question.content %></h1>
+  <h1><%= link_to question.content, question_path(question) %></h1>
   <h4> by: <%= question.user.name %></h4>
 <%end%>
